@@ -1,10 +1,5 @@
 import 'dotenv/config';
 import { Client, GatewayIntentBits, REST, Routes, SlashCommandBuilder, Events } from 'discord.js';
-import express from 'express';
-
-const app = express();
-app.get('/', (req, res) => res.send('Bot is running!'));
-app.listen(3000, () => console.log('Keep-alive server running.'));
 
 const client = new Client({
   intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent],
