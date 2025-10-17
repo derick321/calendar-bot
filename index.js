@@ -193,22 +193,22 @@ const client = new Client({
 
 const commands = [
   new SlashCommandBuilder()
-    .setName("now")
+    .setName("지금")
     .setDescription("지금(한국시간) 같이 게임 가능한 친구 확인"),
   new SlashCommandBuilder()
-    .setName("today")
+    .setName("오늘")
     .setDescription("오늘(한국시간) 개인별 근무 시간 요약"),
   new SlashCommandBuilder()
-    .setName("week")
+    .setName("이번주")
     .setDescription("이번 주(월~일) 근무표 요약"),
   new SlashCommandBuilder()
-    .setName("set_anchor_jsh")
+    .setName("조승헌설정")
     .setDescription("조승헌 8일 사이클 기준일 설정 (yyyy-mm-dd, Day1=주간)")
     .addStringOption((o) =>
       o.setName("date").setDescription("예: 2025-10-13").setRequired(true)
     ),
   new SlashCommandBuilder()
-    .setName("set_anchor_jmj")
+    .setName("지민재설정")
     .setDescription(
       "지민재 주간-야간 기준 주의 시작일(월요일) 설정 (yyyy-mm-dd)"
     )
