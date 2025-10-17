@@ -242,7 +242,7 @@ client.on(Events.InteractionCreate, async (interaction) => {
 
   const now = DateTime.now().setZone(TZ);
 
-  if (interaction.commandName === "now") {
+  if (interaction.commandName === "지금") {
     const s1 = stateJSH(now);
     const s2 = stateJYG(now);
     const s3 = stateJMJ(now);
@@ -269,7 +269,7 @@ client.on(Events.InteractionCreate, async (interaction) => {
     await interaction.reply(lines);
   }
 
-  if (interaction.commandName === "today") {
+  if (interaction.commandName === "오늘") {
     const dayStart = now.startOf("day");
     const s1 = stateJSH(now);
     const s2 = stateJYG(now);
@@ -295,7 +295,7 @@ client.on(Events.InteractionCreate, async (interaction) => {
     await interaction.reply(lines);
   }
 
-  if (interaction.commandName === "week") {
+  if (interaction.commandName === "이번주") {
     const monday = now.startOf("week").plus({ days: 1 }).startOf("day"); // 이번 주 월요일
     const days = Array.from({ length: 7 }, (_, i) => monday.plus({ days: i }));
 
@@ -338,7 +338,7 @@ client.on(Events.InteractionCreate, async (interaction) => {
     await interaction.reply(lines.join("\n"));
   }
 
-  if (interaction.commandName === "set_anchor_jsh") {
+  if (interaction.commandName === "승헌설정") {
     const dateStr = interaction.options.getString("date", true);
     const parsed = DateTime.fromISO(dateStr, { zone: TZ }).startOf("day");
     if (!parsed.isValid) {
@@ -355,7 +355,7 @@ client.on(Events.InteractionCreate, async (interaction) => {
     );
   }
 
-  if (interaction.commandName === "set_anchor_jmj") {
+  if (interaction.commandName === "지민재설정") {
     const dateStr = interaction.options.getString("date", true);
     const parsed = DateTime.fromISO(dateStr, { zone: TZ }).startOf("day");
     if (!parsed.isValid) {
