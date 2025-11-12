@@ -1,5 +1,4 @@
 import "dotenv/config";
-import express from "express";
 import {
   Client,
   GatewayIntentBits,
@@ -373,16 +372,6 @@ client.on(Events.InteractionCreate, async (interaction) => {
     );
   }
 });
-
-/**
- * Render용 keep-alive 웹서버 (포트 열기)
- */
-const app = express();
-app.get("/", (_req, res) =>
-  res.send("✅ Discord game-check bot is running (KST).")
-);
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`🌐 Keep-alive server on ${PORT}`));
 
 /**
  * 시작
